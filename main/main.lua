@@ -1,17 +1,13 @@
+local scene= require("scenes")
 function love.load()
-    love.window.setTitle("brick breaker")
-    Score= 0
-    love.window.setMode(1024, 768)
-    Projectile = require("projectile")
-   UserIO= require('user_input_logic')
-   UserIO.init()
+    scene.set_scene(1)
+    scene.load()
 end
+
 function love.update(dt)
-    Projectile.CoorX = love.mouse.getPosition()
-    
+    scene.update(dt)
 end
 
 function love.draw()
-    Projectile.draw_projectile()
- end
- 
+    scene.draw()
+end
